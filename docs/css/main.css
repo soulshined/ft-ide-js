@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+html, body {
+  height: 100%;
+  padding: 0; margin: 0;
+}
+iframe {
+  display: flex;
+  width: 100%;
+  height: 900px;
+  overflow: hidden;
+}
+body {
+  background-color: rgb(240,240,240);
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  height: 50px;
+  margin-bottom: 10px;
+  color: white;
+  padding: 10px 15px;
+  font-family: Roboto;
+  justify-content: space-between;
+}
+header a:any-link {
+  background: unset;
+  border: 1px solid rgba(240,240,240,0.5);
+  color: rgba(240,240,240,0.94);
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+header a:hover {
+  border-color: white;
+  color: white;
+}
+.flex-column {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.container {
+  display: flex;
+  width: 85%;
+  max-width: 1200px;
+  margin: auto;
+}
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex-row- {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.w-49 {
+width: 49%;
+}
+.w-100 {
+  width: 100%;
+}
+.flex-row section {
+  height: 200px;
+}
+.flex-row > section {
+  height: 300px;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.jc-c {
+  justify-content: center;
+}
+.p  {
+  padding: 20px 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+.bold {
+  font-weight: bold;
+}
+#documentation {
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-right: unset;
+  border-left: unset;
+}
+@media all and (max-width: 500px) {
+  .p {
+    padding: 0;
+  }
+  section {
+    margin: 8px 0;
+  }
+  .flex-row {
+    flex-flow: column nowrap;
+  }
+  .w-49 {
+    width: 100%;
+  }
+  .handler {
+    display: none;
+  }
+  .range {
+    display: none;
+  }
+}

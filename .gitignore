@@ -1,0 +1,5 @@
+src/**.css
+src/**.css.map
+/index.html
+/main.js
+*.todo
