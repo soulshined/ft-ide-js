@@ -30,7 +30,7 @@ The goal of ft-ide is to be able to expand on snippets in a way that is project 
 ```html
   <head>
     ...
-    <script src="https://cdn.jsdelivr.net/gh/soulshined/ft-ide-js/<version number>/src/ft-ide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/soulshined/ft-ide-js@<version number>/src/ft-ide.min.js"></script>
     ...
   </head>
 ```
