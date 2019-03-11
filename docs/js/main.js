@@ -61,7 +61,7 @@ This examples uses:
 \`
 }, {
   theme: 'light',
-  syntaxHighlighting: {
+  syntaxHighlighter: {
     highlight: true
   }
 })
@@ -116,7 +116,7 @@ new FTIDE('ide-3', {
 \`
 }, {
   theme: 'light',
-  syntaxHighlighting: {
+  syntaxHighlighter: {
     highlight: true
   }
 })
@@ -133,7 +133,7 @@ new FTIDE('ide-3', {
 </html>
   `,
   'readme.md': `This examples uses:
-- syntaxHighlighting (show difference for dark theme)
+- syntaxHighlighter (show difference for dark theme)
 - dark theme
 - compact explorerStyle
 - showBreadcrumbs
@@ -148,7 +148,7 @@ new FTIDE('ide-3', {
 })
 new FTIDE('ide-4', {
   'css': {
-
+    "index.html": "test"
   },
   'js': {
     'main.js': `new FTIDE('ide-4', {
@@ -170,14 +170,14 @@ new FTIDE('ide-4', {
 \`,
   'readme.md' : \`
 This examples uses:
-- syntaxHighlighting 
+- syntaxHighlighter 
 - changed ide font
 - changed code font
 - changed root path to index.html
 - expandedFolders
 \`
 }, {
-  syntaxHighlighting: {
+  syntaxHighlighter: {
     highlight: true
   },
   expandFolders: true,  
@@ -199,7 +199,7 @@ This examples uses:
 </html>
   `,
   'readme.md': `This examples uses:
-- syntaxHighlighting 
+- syntaxHighlighter 
 - changed ide font
 - changed code font
 - changed root path to index.html

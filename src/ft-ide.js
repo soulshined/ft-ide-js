@@ -484,23 +484,43 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
       if (this.options.rootPath !== null) {
         let paths = this.options.rootPath.split('/').filter(f => f.trim().length !== 0);
-        let canContinue;
-        let node =tree.html.children[0];
-        do {
-          canContinue = false;
-          [...node.children].forEach(child => {
-            if (child.innerText === paths[0] && !child.classList.contains('folder')) {
-              if (paths.length === 1) {
-                contentid = parseInt(child.getAttribute('data-ft-ide-id'));
-              }
-              else {
-                canContinue = true;
-                node = child.nextSibling;
-              }
-              paths.shift();
-            }
-          });
-        } while (canContinue);
+        
+        let node = tree.html.children[0];
+        let matchedNode = null;
+
+        [...node.children].filter(f=> f.classList.contains('folder') || f.classList.contains('item')).forEach(child => {            
+          if (child.innerText === paths[0] && matchedNode == null) {
+            matchedNode = child;
+            paths.shift();
+          }
+        });
+
+        if (matchedNode != null) {
+          if (paths.length == 0 && matchedNode.classList.contains('item')) {
+            contentid = parseInt(matchedNode.getAttribute('data-ft-ide-id'));
+          }
+
+          if (paths.length > 0 && matchedNode.classList.contains('folder')) {
+            let canContinue;
+            do {
+              canContinue = false;
+              if (matchedNode.nextSibling && matchedNode.nextSibling.tagName == 'UL' && matchedNode.nextSibling.hasChildNodes()) {
+                [...matchedNode.nextSibling.children].filter(f => f.classList.contains('folder') || f.classList.contains('item')).forEach(child => {
+                  if (child.innerText === paths[0]) {
+                    if (paths.length == 1 && child.classList.contains('item')) {
+                      contentid = parseInt(child.getAttribute('data-ft-ide-id'));
+                    }
+                    else {
+                      matchedNode = child;
+                      paths.shift();
+                      canContinue = true;
+                    }
+                  }
+                });
+              }              
+            } while (canContinue);
+          }
+        } 
       }
       
       tree.html.querySelector(`.tree li[data-ft-ide-id="${contentid}"]`).classList.add('active');
