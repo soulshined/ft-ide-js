@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>FT IDE Demos & Usage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/slider.css">
 </head>
+
 <body>
   <header>
     FT-IDE-JS
@@ -23,71 +24,74 @@
     <div class="container jc-c">
       <iframe src="./resizeables.html" frameborder="0" id="resizeables"></iframe>
     </div>
-      <div class="flex-row w-100" id="documentation">
-        <div class="container">
-          <div style="width: 100%; overflow-x:auto;">            
-            <h2>Options</h2>
-            <table>
-                <tr>
-                  <th>property</th>
-                  <th>description</th>
-                  <th>values</th>
-                </tr>
-              <tr>
-                <td>syntaxHighlighter.highlight</td>
-                <td>Enables/disables syntax highlighting</td>
-                <td><span class="code-inline">&lt;boolean&gt;</span> true | <span class="bold">false</span></td>
-              </tr>
-              <tr>
-                <td>codeFontFamily</td>
-                <td>Use any valid <a href="https://fonts.google.com/" target="_blank">google font</a> for the ide code element</td>
-                <td><span class="code-inline">&lt;string&gt;</span> any</td>
-              </tr>
-              <tr>
-                <td>ideFontFamily</td>
-                <td>Use any valid <a href="https://fonts.google.com/" target="_blank">google font</a> for the ide explorer</td>
-                <td><span class="code-inline">&lt;string&gt;</span> any</td>
-              </tr>
-              <tr>
-                <td>showBreadcrumbs</td>
-                <td>Shows the breadrcumb to the currently viewed 'file'</td>
-                <td><span class="code-inline">&lt;string&gt;</span> always | <span class="bold">oncollapse</span> | never</td>
-              </tr>
-              <tr>
-                <td>showCopyToClipboard</td>
-                <td>Enables/disables 'copy to clipboard' button</td>
-                <td><span class="code-inline">&lt;boolean&gt;</span> <span class="bold">true</span> | false</td>
-              </tr>
-              <tr>
-                <td>rootPath</td>
-                <td>Set the first 'file' that displays on load. If omitted, the first file found will be selected</td>
-                <td><span class="code-inline">&lt;string&gt;</span> any</td>
-              </tr>
-              <tr>
-                <td>explorerStyle</td>
-                <td>Shows the explorer in one of many ways</td>
-                <td><span class="code-inline">&lt;string&gt;</span> compact | <span class="bold">material</span></td>
-              </tr>
-              <tr>
-                <td>expandFolders</td>
-                <td>Enables/disables if folders are expanded on load</td>
-                <td><span class="code-inline">&lt;boolean&gt;</span> true | <span class="bold">false</span></td>
-              </tr>
-              <tr>
-                <td>theme</td>
-                <td>Sets the theme of the ide</td>
-                <td><span class="code-inline">&lt;string&gt;</span> <span class="bold">default</span> | dark</td>
-              </tr>
-            </table>
-            <h4>See the <a href="#resizeables">ides</a> above for options examples.</h4>
-          </div>
+    <div class="flex-row w-100" id="documentation">
+      <div class="container">
+        <div style="width: 100%; overflow-x:auto;">
+          <h2>Options</h2>
+          <table>
+            <tr>
+              <th>property</th>
+              <th>description</th>
+              <th>values</th>
+            </tr>
+            <tr>
+              <td>syntaxHighlighter.highlight</td>
+              <td>Enables/disables syntax highlighting</td>
+              <td><span class="code-inline">&lt;boolean&gt;</span> true | <span class="bold">false</span></td>
+            </tr>
+            <tr>
+              <td>codeFontFamily</td>
+              <td>Use any valid <a href="https://fonts.google.com/" target="_blank">google font</a> for the ide code
+                element</td>
+              <td><span class="code-inline">&lt;string&gt;</span> any</td>
+            </tr>
+            <tr>
+              <td>ideFontFamily</td>
+              <td>Use any valid <a href="https://fonts.google.com/" target="_blank">google font</a> for the ide explorer
+              </td>
+              <td><span class="code-inline">&lt;string&gt;</span> any</td>
+            </tr>
+            <tr>
+              <td>showBreadcrumbs</td>
+              <td>Shows the breadrcumb to the currently viewed 'file'</td>
+              <td><span class="code-inline">&lt;string&gt;</span> always | <span class="bold">oncollapse</span> | never
+              </td>
+            </tr>
+            <tr>
+              <td>showCopyToClipboard</td>
+              <td>Enables/disables 'copy to clipboard' button</td>
+              <td><span class="code-inline">&lt;boolean&gt;</span> <span class="bold">true</span> | false</td>
+            </tr>
+            <tr>
+              <td>rootPath</td>
+              <td>Set the first 'file' that displays on load. If omitted, the first file found will be selected</td>
+              <td><span class="code-inline">&lt;string&gt;</span> any</td>
+            </tr>
+            <tr>
+              <td>explorerStyle</td>
+              <td>Shows the explorer in one of many ways</td>
+              <td><span class="code-inline">&lt;string&gt;</span> compact | <span class="bold">material</span></td>
+            </tr>
+            <tr>
+              <td>expandFolders</td>
+              <td>Enables/disables if folders are expanded on load</td>
+              <td><span class="code-inline">&lt;boolean&gt;</span> true | <span class="bold">false</span></td>
+            </tr>
+            <tr>
+              <td>theme</td>
+              <td>Sets the theme of the ide</td>
+              <td><span class="code-inline">&lt;string&gt;</span> <span class="bold">default</span> | dark</td>
+            </tr>
+          </table>
+          <h4>See the <a href="#resizeables">ides</a> above for options examples.</h4>
         </div>
       </div>
+    </div>
   </main>
   <script>
     var inputRange = document.getElementsByClassName('range')[0],
-        resizeable = document.getElementById('resizeables'),
-        maxValue = Math.min(resizeable.clientWidth, 1200);
+      resizeable = document.getElementById('resizeables'),
+      maxValue = Math.min(resizeable.clientWidth, 1200);
 
     // set min/max value
     inputRange.min = 350;
@@ -95,16 +99,16 @@
     inputRange.value = resizeable.clientWidth;
 
     window.onresize = () => {
-      maxValue = Math.min(resizeable.clientWidth, 1200);      
+      maxValue = Math.min(resizeable.clientWidth, 1200);
       inputRange.max = maxValue;
       inputRange.value = resizeable.clientWidth;
       resizeable.style.width = "100%";
     }
-    
+
     // move gradient
     inputRange.addEventListener('input', function () {
       //Change slide thumb color on way up
-      
+
       resizeable.style.width = `${+this.value}px`;
 
       if (this.value > 350) {
@@ -130,4 +134,5 @@
     });
   </script>
 </body>
+
 </html>
