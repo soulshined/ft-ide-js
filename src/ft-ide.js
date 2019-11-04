@@ -533,17 +533,28 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
       this.mobileNav.classList.toggle('show');
     }
     FTIDE.prototype._handleCopyToClipboard = function () {
-      navigator.permissions.query({ name: "clipboard-write" }).then(result => {
-        if (result.state == "granted" || result.state == "prompt") {
-          navigator.clipboard.writeText(this.contentDiv.textContent).then(function () {
-            /* clipboard successfully set */
-            this._showToastr('Copied to Clipboard');
-          }.bind(this), function () {
-            /* clipboard write failed */
-            this._showToastr('Error copying');
-          }.bind(this));
-        }
-      });
+      if (navigator.permissions) {
+        navigator.permissions.query({ name: "clipboard-write" }).then(result => {
+          if (result.state == "granted" || result.state == "prompt") {
+            navigator.clipboard.writeText(this.contentDiv.textContent).then(function () {
+              /* clipboard successfully set */
+              this._showToastr('Copied to Clipboard');
+            }.bind(this), function () {
+              /* clipboard write failed */
+              this._showToastr('Error copying');
+            }.bind(this));
+          }
+        });
+      }
+      else {
+        const ta = document.createElement("textarea");
+        ta.value = this.contentDiv.textContent;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        this._showToastr("Copied to Clipboard");
+      }
     }
     FTIDE.prototype._registerLIEvents = function () {
       const navs = document.querySelectorAll(`#${this.ide.id} nav.explorer`);
@@ -652,8 +663,9 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
     //watch for width changes
     // NOTE: This does not protect against resizable divs, only if the window size itself is changed
-    window.onresize = function (e) {
-      [...document.querySelectorAll(`.ft - ide`)].forEach(element => {
+    
+    window.onresize = function() {
+      [...document.querySelectorAll(`.ft-ide`)].forEach(element => {
         if (element.clientWidth < 400) {
           element.setAttribute('data-ft-ide-size', 'mobile');
         } else {
