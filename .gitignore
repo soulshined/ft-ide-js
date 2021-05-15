@@ -1,5 +1,7 @@
 src/**.css
 src/**.css.map
-/index.html
+/*.html
+/*.fthtml
 /main.js
+*.js.map
 *.todo
